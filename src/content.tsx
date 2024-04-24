@@ -1,19 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
-import './index.css';
+import AppWrapper from './AppWrapper';
+import './content.scss';
 
 const root = document.createElement('div');
-root.id = 'sink-root';
+root.id = 'sink-shadow-root';
 document.body.appendChild(root);
 
 const shadowRoot = root.attachShadow({ mode: 'open' });
-const div = document.createElement('div');
-div.id = 'sink-shadow-root';
-shadowRoot.appendChild(div);
+// const div = document.createElement('div');
+// div.id = 'sink-app-root';
+// shadowRoot.appendChild(div);
 
-ReactDOM.createRoot(div).render(
+ReactDOM.createRoot(shadowRoot).render(
   <React.StrictMode>
-    <App />
+    <AppWrapper />
   </React.StrictMode>,
 );
